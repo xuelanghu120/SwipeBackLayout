@@ -6,6 +6,7 @@ import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.support.v4.view.ViewCompat;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
@@ -330,8 +331,13 @@ public class SwipeBackLayout extends FrameLayout {
      * @see #EDGE_RIGHT
      * @see #EDGE_BOTTOM
      */
+    @SuppressWarnings("deprecation")
     public void setShadow(int resId, int edgeFlag) {
-        setShadow(getResources().getDrawable(resId), edgeFlag);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            setShadow(getResources().getDrawable(resId, null), edgeFlag);
+        } else {
+            setShadow(getResources().getDrawable(resId), edgeFlag);
+        }
     }
 
     /**
