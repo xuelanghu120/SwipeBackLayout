@@ -10,6 +10,7 @@ import java.lang.reflect.Method;
 /**
  * Created by Chaojun Wang on 6/9/14.
  */
+@SuppressWarnings({"WeakerAccess", "unused"})
 public class Utils {
     private Utils() {
     }
@@ -31,7 +32,7 @@ public class Utils {
             Method method = Activity.class.getDeclaredMethod("convertFromTranslucent");
             method.setAccessible(true);
             method.invoke(activity);
-        } catch (Throwable t) {
+        } catch (Throwable ignored) {
         }
     }
 
@@ -70,10 +71,10 @@ public class Utils {
             Method method = Activity.class.getDeclaredMethod("convertToTranslucent",
                     translucentConversionListenerClazz);
             method.setAccessible(true);
-            method.invoke(activity, new Object[] {
-                null
+            method.invoke(activity, new Object[]{
+                    null
             });
-        } catch (Throwable t) {
+        } catch (Throwable ignored) {
         }
     }
 
@@ -97,7 +98,7 @@ public class Utils {
                     translucentConversionListenerClazz, ActivityOptions.class);
             convertToTranslucent.setAccessible(true);
             convertToTranslucent.invoke(activity, null, options);
-        } catch (Throwable t) {
+        } catch (Throwable ignored) {
         }
     }
 }

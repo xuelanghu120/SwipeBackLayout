@@ -12,6 +12,7 @@ import me.imid.swipebacklayout.lib.Utils;
 /**
  * @author Yrom
  */
+@SuppressWarnings("WeakerAccess")
 public class SwipeBackActivityHelper {
     private Activity mActivity;
 
@@ -21,7 +22,6 @@ public class SwipeBackActivityHelper {
         mActivity = activity;
     }
 
-    @SuppressWarnings("deprecation")
     public void onActivityCreate() {
         mActivity.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         mActivity.getWindow().getDecorView().setBackgroundDrawable(null);

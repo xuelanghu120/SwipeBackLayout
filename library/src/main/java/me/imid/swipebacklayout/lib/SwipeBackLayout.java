@@ -16,6 +16,7 @@ import android.widget.FrameLayout;
 import java.util.ArrayList;
 import java.util.List;
 
+@SuppressWarnings("unused")
 public class SwipeBackLayout extends FrameLayout {
     /**
      * Minimum velocity that will be detected as a fling
@@ -172,7 +173,7 @@ public class SwipeBackLayout extends FrameLayout {
     /**
      * Set up contentView which will be moved by user gesture
      *
-     * @param view
+     * @param view The view.
      */
     private void setContentView(View view) {
         mContentView = view;
@@ -242,7 +243,7 @@ public class SwipeBackLayout extends FrameLayout {
      */
     public void addSwipeListener(SwipeListener listener) {
         if (mListeners == null) {
-            mListeners = new ArrayList<SwipeListener>();
+            mListeners = new ArrayList<>();
         }
         mListeners.add(listener);
     }
@@ -250,7 +251,7 @@ public class SwipeBackLayout extends FrameLayout {
     /**
      * Removes a listener from the set of listeners
      *
-     * @param listener
+     * @param listener The listener.
      */
     public void removeSwipeListener(SwipeListener listener) {
         if (mListeners == null) {
@@ -259,7 +260,7 @@ public class SwipeBackLayout extends FrameLayout {
         mListeners.remove(listener);
     }
 
-    public static interface SwipeListener {
+    public interface SwipeListener {
         /**
          * Invoke when state change
          *
@@ -269,7 +270,7 @@ public class SwipeBackLayout extends FrameLayout {
          * @see #STATE_DRAGGING
          * @see #STATE_SETTLING
          */
-        public void onScrollStateChange(int state, float scrollPercent);
+        void onScrollStateChange(int state, float scrollPercent);
 
         /**
          * Invoke when edge touched
@@ -279,19 +280,19 @@ public class SwipeBackLayout extends FrameLayout {
          * @see #EDGE_RIGHT
          * @see #EDGE_BOTTOM
          */
-        public void onEdgeTouch(int edgeFlag);
+        void onEdgeTouch(int edgeFlag);
 
         /**
          * Invoke when scroll percent over the threshold for the first time
          */
-        public void onScrollOverThreshold();
+        void onScrollOverThreshold();
     }
 
     /**
      * Set scroll threshold, we will close the activity, when scrollPercent over
      * this value
      *
-     * @param threshold
+     * @param threshold Threshold.
      */
     public void setScrollThresHold(float threshold) {
         if (threshold >= 1.0f || threshold <= 0) {
@@ -303,8 +304,8 @@ public class SwipeBackLayout extends FrameLayout {
     /**
      * Set a drawable used for edge shadow.
      *
-     * @param shadow    Drawable to use
-     * @param edgeFlags Combination of edge flags describing the edge to set
+     * @param shadow   Drawable to use
+     * @param edgeFlag Combination of edge flags describing the edge to set
      * @see #EDGE_LEFT
      * @see #EDGE_RIGHT
      * @see #EDGE_BOTTOM
@@ -323,8 +324,8 @@ public class SwipeBackLayout extends FrameLayout {
     /**
      * Set a drawable used for edge shadow.
      *
-     * @param resId     Resource of drawable to use
-     * @param edgeFlags Combination of edge flags describing the edge to set
+     * @param resId    Resource of drawable to use
+     * @param edgeFlag Combination of edge flags describing the edge to set
      * @see #EDGE_LEFT
      * @see #EDGE_RIGHT
      * @see #EDGE_BOTTOM
@@ -549,7 +550,7 @@ public class SwipeBackLayout extends FrameLayout {
             if (mScrollPercent >= 1) {
                 if (!mActivity.isFinishing()) {
                     mActivity.finish();
-                    mActivity.overridePendingTransition(0, 0);        
+                    mActivity.overridePendingTransition(0, 0);
                 }
             }
         }
