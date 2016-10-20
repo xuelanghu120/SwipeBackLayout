@@ -1,0 +1,20 @@
+apply plugin: 'com.android.library'
+
+dependencies {
+    compile 'com.android.support:appcompat-v7:24.2.1'
+}
+
+android {
+    compileSdkVersion 24
+    buildToolsVersion "24.0.3"
+
+    defaultConfig {
+        minSdkVersion 16
+        targetSdkVersion 24
+        versionCode rootProject.ext.projectVersionCode
+        versionName rootProject.ext.projectVersionName
+    }
+}
+
+apply from: 'install.gradle'
+apply from: 'bintray.gradle'
