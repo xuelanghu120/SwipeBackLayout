@@ -76,7 +76,7 @@ Download
 ===
 Download via Jcenter:
 ```
-compile 'me.imid.swipebacklayout.lib:library:1.0.0'
+compile 'me.pexcn:swipebacklayout:1.0.0'
 ```
 
 
