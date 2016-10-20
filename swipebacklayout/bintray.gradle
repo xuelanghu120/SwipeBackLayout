@@ -1,0 +1,42 @@
+apply plugin: 'com.jfrog.bintray'
+
+version = rootProject.ext.projectVersionName
+
+task sourcesJar(type: Jar) {
+    classifier = 'sources'
+    from android.sourceSets.main.java.srcDirs
+}
+
+artifacts {
+    archives sourcesJar
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+Properties properties = new Properties()
+properties.load(project.rootProject.file('local.properties').newDataInputStream())
+
+bintray {
+    user = properties.getProperty("bintray.user")
+    key = properties.getProperty("bintray.apikey")
+
+    configurations = ['archives']
+    pkg {
+        repo = 'maven'
+        name = rootProject.ext.projectName
+        desc = rootProject.ext.projectDescription
+        websiteUrl = rootProject.ext.siteUrl
+        vcsUrl = rootProject.ext.gitUrl
+        licenses = rootProject.ext.licenses
+        publish = true
+        publicDownloadNumbers = true
+        version {
+            desc = rootProject.ext.projectDescription
+            gpg {
+                sign = false
+            }
+        }
+    }
+}

@@ -4,6 +4,8 @@ buildscript {
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:2.2.1'
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7.1'
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.5'
     }
 }
 
@@ -11,4 +13,25 @@ allprojects {
     repositories {
         jcenter()
     }
+}
+
+ext {
+    projectName = 'SwipeBackLayout'
+    projectDescription = 'An Android library that help you to build app with swipe back gesture.'
+    projectVersionName = '1.0.1'
+    projectVersionCode = 2
+
+    groupId = 'me.pexcn'
+    artifactId = 'swipebacklayout'
+
+    siteUrl = "https://github.com/pexcn/SwipeBackLayout"
+    gitUrl = "https://github.com/pexcn/SwipeBackLayout.git"
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'https://www.apache.org/licenses/LICENSE-2.0.txt'
+    licenses = ["Apache-2.0"]
+
+    developerId = 'pexcn'
+    developerName = 'Xingyu Chen'
+    developerEmail = 'pexcn97@gmail.com'
 }
