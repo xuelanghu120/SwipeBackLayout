@@ -15,7 +15,7 @@
  */
 
 
-package me.imid.swipebacklayout.lib;
+package me.pexcn.swipebacklayout;
 
 import android.content.Context;
 import android.support.v4.view.MotionEventCompat;

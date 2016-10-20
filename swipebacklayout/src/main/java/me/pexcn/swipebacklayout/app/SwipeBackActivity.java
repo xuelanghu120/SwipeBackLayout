@@ -1,12 +1,12 @@
 
-package me.imid.swipebacklayout.lib.app;
+package me.pexcn.swipebacklayout.app;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-import me.imid.swipebacklayout.lib.SwipeBackLayout;
-import me.imid.swipebacklayout.lib.Utils;
+import me.pexcn.swipebacklayout.SwipeBackLayout;
+import me.pexcn.swipebacklayout.Utils;
 
 public class SwipeBackActivity extends AppCompatActivity implements BaseSwipeBackActivity {
     private SwipeBackActivityHelper mHelper;
