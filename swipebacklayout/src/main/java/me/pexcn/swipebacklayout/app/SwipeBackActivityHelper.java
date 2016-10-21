@@ -6,6 +6,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.view.LayoutInflater;
 import android.view.View;
 
+import me.pexcn.swipebacklayout.R;
 import me.pexcn.swipebacklayout.SwipeBackLayout;
 import me.pexcn.swipebacklayout.Utils;
 
@@ -24,9 +25,8 @@ public class SwipeBackActivityHelper {
 
     public void onActivityCreate() {
         mActivity.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-        mActivity.getWindow().getDecorView().setBackgroundDrawable(null);
-        mSwipeBackLayout = (SwipeBackLayout) LayoutInflater.from(mActivity).inflate(
-                me.pexcn.swipebacklayout.R.layout.swipeback_layout, null);
+        mActivity.getWindow().getDecorView().setBackground(null);
+        mSwipeBackLayout = (SwipeBackLayout) LayoutInflater.from(mActivity).inflate(R.layout.swipeback_layout, mSwipeBackLayout, false);
         mSwipeBackLayout.addSwipeListener(new SwipeBackLayout.SwipeListener() {
             @Override
             public void onScrollStateChange(int state, float scrollPercent) {

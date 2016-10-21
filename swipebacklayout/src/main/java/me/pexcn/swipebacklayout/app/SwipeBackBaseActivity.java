@@ -6,7 +6,7 @@ import me.pexcn.swipebacklayout.SwipeBackLayout;
  * @author Yrom
  */
 @SuppressWarnings({"unused", "WeakerAccess"})
-public interface BaseSwipeBackActivity {
+public interface SwipeBackBaseActivity {
     /**
      * @return the SwipeBackLayout associated with this activity.
      */

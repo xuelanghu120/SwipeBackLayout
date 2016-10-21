@@ -1,4 +1,3 @@
-
 package me.pexcn.swipebacklayout.app;
 
 import android.os.Bundle;
@@ -7,7 +6,7 @@ import android.view.View;
 
 import me.pexcn.swipebacklayout.SwipeBackLayout;
 
-public class SwipeBackPreferenceActivity extends PreferenceActivity implements BaseSwipeBackActivity {
+public class SwipeBackPreferenceActivity extends PreferenceActivity implements SwipeBackBaseActivity {
     private SwipeBackActivityHelper mHelper;
 
     @Override
