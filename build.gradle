@@ -18,8 +18,8 @@ allprojects {
 ext {
     projectName = 'SwipeBackLayout'
     projectDescription = 'An Android library that help you to build app with swipe back gesture.'
-    projectVersionName = '1.0.1'
-    projectVersionCode = 2
+    projectVersionName = '1.0.2'
+    projectVersionCode = 3
 
     groupId = 'me.pexcn'
     artifactId = 'swipebacklayout'
