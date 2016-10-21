@@ -37,7 +37,7 @@ import java.util.Arrays;
  * of useful operations and state tracking for allowing a user to drag and reposition
  * views within their parent ViewGroup.
  */
-@SuppressWarnings("WeakerAccess")
+@SuppressWarnings({"WeakerAccess", "unused"})
 public class ViewDragHelper {
     private static final String TAG = "ViewDragHelper";
 
@@ -66,6 +66,7 @@ public class ViewDragHelper {
     /**
      * Edge flag indicating that the left edge should be affected.
      */
+    @SuppressWarnings("PointlessBitwiseExpression")
     public static final int EDGE_LEFT = 1 << 0;
 
     /**
@@ -91,6 +92,7 @@ public class ViewDragHelper {
     /**
      * Indicates that a check should occur along the horizontal axis
      */
+    @SuppressWarnings("PointlessBitwiseExpression")
     public static final int DIRECTION_HORIZONTAL = 1 << 0;
 
     /**
@@ -1499,13 +1501,7 @@ public class ViewDragHelper {
      * @return true if the supplied view is under the given point, false otherwise
      */
     public boolean isViewUnder(View view, int x, int y) {
-        if (view == null) {
-            return false;
-        }
-        return x >= view.getLeft()
-                && x < view.getRight()
-                && y >= view.getTop()
-                && y < view.getBottom();
+        return view != null && x >= view.getLeft() && x < view.getRight() && y >= view.getTop() && y < view.getBottom();
     }
 
     /**
